@@ -87,16 +87,19 @@
         <div>
             <header class="heading" class="text">
                 <h1>HOMEWORK 1-2</h1>
-                <nav>
-                    <button class="button" type="button" onclick="alert('Uploading - coming soon!')">Upload</button>
-                    <button class="gbutton" type="button" onclick="alert('Downloading - coming soon!')">Download</button>
+                <nav>   
+                    <input id='fileid' type='file' multiple accept=".xls,.xlsx" hidden />
+                    <input id='buttonid' type='button' class="button" value='Upload' />
+                    <button id="clearfiles" class="button">Clear Files</button>
                 </nav>
+                <ul style="font-size: 16px; margin-top: 16px; list-style: none;" id="files-container"></ul>
             </header>
         </div>
 
     </section>
 
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="upload.js"></script>
     
     
 </body>

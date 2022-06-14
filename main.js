@@ -10,12 +10,18 @@ let mainWindow;
 // Listen for app to be ready
 app.on('ready', function(){
     // Create new window
-    mainWindow = new BrowserWindow({});
+    mainWindow = new BrowserWindow({
+      webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+        }
+    });
     // Load html into window
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol:'file',
         slashes: true
+        
     }));
 
     //Build menu from template

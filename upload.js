@@ -22,6 +22,15 @@ const clearFiles = () => {
     console.log(uploadedFiles);
 }
 
+const saveInfo = () => {
+    const fs = require('fs');
+    fs.appendFile('uploaded-files-info.txt', uploadedFiles, (err) => {
+        if (err) throw err;
+        console.log('info salvestati!');
+    });
+}
+
+
 const onFileUpload = (event) => {
     uploadedFiles = event?.target?.files;
     console.log(event?.target?.files);
@@ -38,3 +47,6 @@ fileInput.addEventListener('change', onFileUpload);
 
 const clearButton = document.getElementById('clearfiles');
 clearButton.addEventListener('click', clearFiles);
+
+const saveInfoButton = document.getElementsById('saveinfo');
+saveInfoButton.addEventListener('click', saveInfo);
