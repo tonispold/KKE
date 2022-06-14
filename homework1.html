@@ -8,10 +8,10 @@
     
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>KKE</title>
     
-    <!--<title>Dashboard Sidebar Menu</title>--> 
 </head>
-<body class="fade-in-image">
+<body>
     
     <nav class="sidebar close">
         <header>
@@ -46,6 +46,12 @@
                             <span class="text nav-text">Homeworks</span>
                         </a>
                     </li>
+                    <li class="nav-link">
+                        <a href="note.html">
+                            <i class='bx bx-edit icon' ></i>
+                            <span class="text nav-text">Notes</span>
+                        </a>
+                    </li>
 
                 </ul>
             </div>
@@ -56,21 +62,25 @@
                         <span class="text nav-text">Info</span>
                     </a>
                 </li>
-                <li class="mode">
-                    <div class="sun-moon">
-                        <i class='bx bx-moon icon moon'></i>
-                        <i class='bx bx-sun icon sun'></i>
-                    </div>
-                    <span class="mode-text text">Dark mode</span>
-                    <div class="toggle-switch">
-                        <span class="switch"></span>
+                <li>
+                    <a href="ee/homework1.html">
+                        <img class="flag" src="images/gbr.svg" alt="">
+                        <span class="text nav-text lang-text">English</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="darkLight-searchBox">
+                        <div class="dark-light">
+                            <i class='bx bx-moon moon'></i>
+                            <i class='bx bx-sun sun'></i>
+                        </div>
                     </div>
                 </li>
             </div>
         </div>
     </nav>
 
-    <section class="home">
+    <section class="home fade-in-image">
         <div class="text">
             <p><a class="sbutton" href="homeworks.html">Back</a></p>
         </div>
@@ -78,17 +88,7 @@
             <header class="heading" class="text">
                 <h1>HOMEWORK 1-1</h1>
                 <nav>
-                    <input id='fileid' type='file' hidden/>
-                    <input id='buttonid' type='button' class="button" value='Upload' />
-
-                    <script>
-                        document.getElementById('buttonid').addEventListener('click', openDialog);
-        
-                        function openDialog() {
-                            document.getElementById('fileid').click();
-                        }
-                    </script>
-
+                    <button class="button" type="button" onclick="alert('Uploading - coming soon!')">Upload</button>
                     <button class="gbutton" type="button" onclick="alert('Downloading - coming soon!')">Download</button>
                 </nav>
             </header>
@@ -96,32 +96,8 @@
 
     </section>
 
-    <script>
-        const body = document.querySelector('body'),
-        sidebar = body.querySelector('nav'),
-        toggle = body.querySelector(".toggle"),
-        searchBtn = body.querySelector(".search-box"),
-        modeSwitch = body.querySelector(".toggle-switch"),
-        modeText = body.querySelector(".mode-text");
-
-
-        toggle.addEventListener("click" , () =>{
-            sidebar.classList.toggle("close");
-        })
-        searchBtn.addEventListener("click" , () =>{
-            sidebar.classList.remove("close");
-        })
-        modeSwitch.addEventListener("click" , () =>{
-        body.classList.toggle("dark");
-
-        if(body.classList.contains("dark")){
-            modeText.innerText = "Light mode";
-            }else{
-                modeText.innerText = "Dark mode";
-                
-            }
-        });
-    </script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="upload.js"></script>
     
     
 </body>
