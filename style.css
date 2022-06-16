@@ -358,8 +358,7 @@ body.dark .home .text{
 }
 
 /* BUTTONS */
-.button, .sbutton, .gbutton {
-    background: var(--back-grad);
+.button, .gbutton {
     border: none;
     color: white;
     padding: 15px 32px;
@@ -379,10 +378,44 @@ body.dark .home .text{
 }
 .sbutton {
     background: var(--back-grad);
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    margin: 4px 4px;
+    cursor: pointer;
+    position: center;
+    border-radius: 6px;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.g {
+    padding-left: 50px;
 }
 .gbutton {
     background: linear-gradient(90deg, rgb(116, 134, 136) 17%, rgb(96, 110, 120) 94%);
-    min-width: 200px;
+    min-width: 333px;
+}
+.cbutton {
+    background: linear-gradient(90deg, rgb(153, 24, 24) 20%, rgb(148, 1, 1) 90%);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: center;
+    border-radius: 6px;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+.cbutton:hover {
+    background: linear-gradient(90deg, rgb(121, 27, 27) 20%, rgb(92, 10, 10) 90%);
 }
 .sbutton:hover {
     background: linear-gradient(90deg, rgb(0, 174, 209) 20%, rgb(35, 144, 172) 90%);
@@ -421,4 +454,11 @@ body.dark .home .text{
 .lang-text {
     position: relative;
     padding-left: 60px;
+}
+
+/* Upload */
+#files-container {
+    font-size: 16px;
+    margin-top: 16px;
+    list-style: none;
 }

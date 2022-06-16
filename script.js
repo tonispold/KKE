@@ -33,9 +33,6 @@ toggle.addEventListener("click" , () =>{
 searchBtn.addEventListener("click" , () =>{
     sidebar.classList.remove("close");
 })
-modeSwitch.addEventListener("click" , () =>{
-body.classList.toggle("dark");
-});
 
 function checkInput() {
     var query = document.getElementById('search').value;

@@ -1,3 +1,4 @@
+const fs = require('fs');
 // Currently uploaded files
 let uploadedFiles = [];
 
@@ -19,12 +20,12 @@ const clearFiles = () => {
     uploadedFiles = [];
     const filesContainer = document.getElementById('files-container');
     filesContainer.innerHTML = '';
-    console.log(uploadedFiles);
 }
 
 const saveInfo = () => {
-    const fs = require('fs');
-    fs.appendFile('uploaded-files-info.txt', uploadedFiles, (err) => {
+    let filesInfo = '';
+    Array.from(uploadedFiles).forEach((file, index) => filesInfo += `${file.path}${(index !== uploadedFiles.length - 1) ? '\n' : ''}`);
+    fs.writeFile('uploaded-files-info.txt', filesInfo, (err) => {
         if (err) throw err;
         console.log('info salvestati!');
     });
@@ -48,5 +49,5 @@ fileInput.addEventListener('change', onFileUpload);
 const clearButton = document.getElementById('clearfiles');
 clearButton.addEventListener('click', clearFiles);
 
-const saveInfoButton = document.getElementsById('saveinfo');
+const saveInfoButton = document.getElementById('saveinfo');
 saveInfoButton.addEventListener('click', saveInfo);

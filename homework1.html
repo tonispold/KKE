@@ -90,10 +90,23 @@
                 <nav>   
                     <input id='fileid' type='file' multiple accept=".xls,.xlsx" hidden />
                     <input id='buttonid' type='button' class="button" value='Upload' />
-                    <button id="clearfiles" class="button">Clear Files</button>
-                    <button id="saveinfo" class="button">Save Info</button>
+                    <button id="clearfiles" class="cbutton nav-link" onclick="alert('Cleared SELECTED files!')">CLEAR</button>                    
                 </nav>
-                <ul style="font-size: 16px; margin-top: 16px; list-style: none;" id="files-container"></ul>
+                <nav class="text">   
+                    <button id="saveinfo" class="gbutton" onclick="shell.openPath(firstPath)">Control</button>
+                    <button id="saveinfo" class="gbutton" onclick="shell.openPath(secondPath)">Open</button>
+                    <script>
+                        const path = require("path");
+                        const { app, shell } = require("electron")
+                        var firstPath = "homework1-1.exe";
+                        var resolvedPath = path.resolve(firstPath);
+
+                        var secondPath = "homework1_1.zip"
+                        var resolvedPathSecond = path.resolve(secondPath);
+                    </script>
+                </nav>
+
+                <ul id="files-container"></ul>
             </header>
         </div>
 
